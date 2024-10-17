@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
-import { CreateRolDto } from './dto/create-role.dto';
+import { CreateRoleDto } from './dto/create-role.dto';
 import { UpdateRoleDto } from './dto/update-role.dto';
 
 @Injectable()
 export class RolesService {
   private roles = [];
 
-  create(createRolDto: CreateRolDto) {
+  create(createRolDto: CreateRoleDto) {
     const nuevoRol = {
       id: Date.now(),
       ...createRolDto,
@@ -23,7 +23,7 @@ export class RolesService {
     return this.roles.find(rol => rol.id === id);
   }
 
-  update(id: number, updateRolDto: Partial<CreateRolDto>) {
+  update(id: number, updateRolDto: Partial<CreateRoleDto>) {
     const rol = this.findOne(id);
     if (rol) {
       Object.assign(rol, updateRolDto);

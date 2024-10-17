@@ -1,5 +1,5 @@
 
-export class CreateRolDto {
+export class CreateRoleDto {
 
     TutorResponsable: boolean;
 
