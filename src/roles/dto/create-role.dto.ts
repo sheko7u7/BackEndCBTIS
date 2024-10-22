@@ -1,12 +1,15 @@
+import { IsBoolean } from 'class-validator';
 
 export class CreateRoleDto {
+  @IsBoolean()
+  TutorResponsable: boolean;
 
-    TutorResponsable: boolean;
+  @IsBoolean()
+  Admin: boolean;
 
-    Admin: boolean;
+  @IsBoolean()
+  Secretaria: boolean;
 
-    Secretaria: boolean;
-
-    PrefectoMaestro: boolean;
-  }
-  
+  @IsBoolean()
+  PrefectoMaestro: boolean;
+}

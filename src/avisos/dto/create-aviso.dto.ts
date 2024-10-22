@@ -1,12 +1,19 @@
+import { IsString, MinLength, IsNumber, IsDate } from 'class-validator';
+import { Type } from 'class-transformer';
 
-export class CreateAvisoDto {
+export class CreateAvisosDto {
+  @IsString()
+  @MinLength(3)
+  Nombre: string;
 
-    Nombre: string;
+  @IsString()
+  @MinLength(10)
+  Descripcion: string;
 
-    Descripcion: string;
+  @IsNumber()
+  TotalDeIncidencias: number;
 
-    TotalDeIncidencias: number;
-
-    FechaDeAviso: Date;
-  }
-  
+  @IsDate()
+  @Type(() => Date)
+  FechaDeAviso: Date;
+}

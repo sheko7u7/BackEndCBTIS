@@ -1,24 +1,36 @@
+import { IsString, MinLength, IsEmail, IsPhoneNumber, IsDate } from 'class-validator';
+import { Type } from 'class-transformer';
 
 export class CreateAlumnoDto {
-   
-    Nombre: string;
-    
-    ApellidoPaterno: string;
-    
-    ApellidoMaterno: string;
-    
-    NumControlEscolar: string; 
-    
-    CorreoElectronico: string;
-    
-    ImgPerfil: string;
-    
-    NumTelefono: string;
-    
-    Curp: string;
-    
-    Direccion: string;
-    
-    FechaNacimiento: Date;
-  }
-  
+  @IsString()
+  @MinLength(3)
+  Nombre: string;
+
+  @IsString()
+  @MinLength(3)
+  ApellidoPaterno: string;
+
+  @IsString()
+  @MinLength(3)
+  ApellidoMaterno: string;
+
+  @IsString()
+  NumControlEscolar: string;
+
+  @IsEmail()
+  CorreoElectronico: string;
+
+  @IsPhoneNumber('MX')
+  NumTelefono: string;
+
+  @IsString()
+  @MinLength(18)
+  Curp: string;
+
+  @IsString()
+  Direccion: string;
+
+  @IsDate()
+  @Type(() => Date)
+  FechaNacimiento: Date;
+}

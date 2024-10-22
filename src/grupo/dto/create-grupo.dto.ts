@@ -1,7 +1,7 @@
+import { IsString, MinLength } from 'class-validator';
 
 export class CreateGrupoDto {
-
-    Nombre: string;
-
+  @IsString()
+  @MinLength(3)
+  Nombre: string;
 }
-  

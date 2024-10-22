@@ -13,5 +13,6 @@ import { GrupoModule } from './grupo/grupo.module';
   imports: [ResponsableModule, AdministrativoModule, AlumnoModule, AvisosModule, RolesModule, EspecialidadModule, GrupoModule],
   controllers: [AppController],
   providers: [AppService],
+  
 })
 export class AppModule {}
