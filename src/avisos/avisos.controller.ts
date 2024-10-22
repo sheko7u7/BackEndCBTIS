@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { AvisosService } from './avisos.service';
-import { CreateAvisoDto } from './dto/create-aviso.dto';
+import { CreateAvisoDto } from './dto/create-aviso.dto';  // Ahora coincide correctamente
 import { UpdateAvisoDto } from './dto/update-aviso.dto';
 
 @Controller('avisos')
@@ -8,7 +8,7 @@ export class AvisosController {
   constructor(private readonly avisosService: AvisosService) {}
 
   @Post()
-  create(@Body() createAvisoDto: CreateAvisoDto) {
+  create(@Body() createAvisoDto: CreateAvisoDto) {  // Ahora coincide correctamente
     return this.avisosService.create(createAvisoDto);
   }
 

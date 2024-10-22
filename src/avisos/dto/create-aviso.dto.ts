@@ -1,7 +1,8 @@
+// src/avisos/dto/create-aviso.dto.ts
 import { IsString, MinLength, IsNumber, IsDate } from 'class-validator';
 import { Type } from 'class-transformer';
 
-export class CreateAvisosDto {
+export class CreateAvisoDto {  // Cambiado a CreateAvisoDto
   @IsString()
   @MinLength(3)
   Nombre: string;

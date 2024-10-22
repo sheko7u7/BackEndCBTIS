@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
-import { CreateAvisoDto } from './dto/create-aviso.dto';
+import { CreateAvisoDto } from './dto/create-aviso.dto';  // Ahora coincide correctamente
 import { UpdateAvisoDto } from './dto/update-aviso.dto';
 
 @Injectable()
 export class AvisosService {
   private avisos = [];
 
-  create(createAvisoDto: CreateAvisoDto) {
+  create(createAvisoDto: CreateAvisoDto) {  // Ahora coincide correctamente
     const nuevoAviso = {
       id: Date.now(),
       ...createAvisoDto,
